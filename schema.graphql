@@ -1,0 +1,55 @@
+type Approval @entity {
+  id: ID!
+  owner: Bytes! # address
+  approved: Bytes! # address
+  tokenId: BigInt! # uint256
+}
+
+type ApprovalForAll @entity {
+  id: ID!
+  owner: Bytes! # address
+  operator: Bytes! # address
+  approved: Boolean! # bool
+}
+
+type Locked @entity {
+  id: ID!
+  tokenId: BigInt! # uint256
+}
+
+type Mint @entity {
+  id: ID!
+  sender: Bytes! # address
+  owner: Bytes! # address
+  tokenURI: String! # string
+  tokenId: BigInt! # uint256
+}
+
+type OwnershipTransferred @entity {
+  id: ID!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+}
+
+type Transfer @entity {
+  id: ID!
+  from: Bytes! # address
+  to: Bytes! # address
+  tokenId: BigInt! # uint256
+}
+
+type Unlocked @entity {
+  id: ID!
+  tokenId: BigInt! # uint256
+}
+
+type VerificationValidityPeriod @entity {
+  id: ID!
+  period: BigInt! # uint256
+}
+
+type Verified @entity {
+  id: ID!
+  tokenId: BigInt! # uint256
+  timestamp: BigInt! # uint256
+}
