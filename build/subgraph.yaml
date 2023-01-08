@@ -1,6 +1,6 @@
 specVersion: 0.0.2
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: PolygonGlance
@@ -24,7 +24,7 @@ dataSources:
         - Verified
       abis:
         - name: PolygonGlance
-          file: ./abis/PolygonGlance.json
+          file: PolygonGlance/abis/PolygonGlance.json
       eventHandlers:
         - event: Approval(indexed address,indexed address,indexed uint256)
           handler: handleApproval
@@ -44,4 +44,4 @@ dataSources:
           handler: handleVerificationValidityPeriod
         - event: Verified(uint256,uint256)
           handler: handleVerified
-      file: ./src/mapping.ts
+      file: PolygonGlance/PolygonGlance.wasm
